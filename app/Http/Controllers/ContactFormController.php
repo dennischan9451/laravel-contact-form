@@ -16,13 +16,13 @@ class ContactFormController extends Controller
     public function storeFormData(Request $request) {
 
         // Form validation
-        $this->validate($request, [
+        $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'message' => 'required'
         ]);
 
-        //  Store data in database
+        // Store data in database
         Contact::create($request->all());
 
         return back()->with('success', 'Thank you for writing to us.');

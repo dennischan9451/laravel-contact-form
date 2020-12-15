@@ -15,7 +15,7 @@ use App\Http\Controllers\ContactFormController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/contact');
 });
 
 Route::get('/contact', [ContactFormController::class, 'index']);
